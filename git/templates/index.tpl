@@ -23,11 +23,38 @@
 
 		<h1>Hello, world!</h1>
 
+		<div id="news-feed">
+				<div class="news-entry">
+					<div class="news-entry-title">
+						British nurse Pauline Cafferkey, who recovered from Ebola, back in hospital again
+					</div>
+					<div class="news-entry-summary">
+						A Scottish nurse, who recovered from Ebola but then suffered life-threatening complications from the virus persisting in her brain, has been admitted to hospital for a third time, a hospital in Scotland said on Tuesday.
+					</div>
+				</div>
+				<div class="news-entry" style="display:none">
+					<div class="news-entry-title">
+						Invercargill 11-year-old runaway heads towards Dunedin on his motorbike
+					</div>
+					<div class="news-entry-summary">
+						An 11-year-old Invercargill boy has been found after taking off from the city on his motorbike and heading towards Dunedin.
+					</div>
+				</div>
+				<div class="news-entry" style="display:none">
+					<div class="news-entry-title">
+						One dead, several injured after Dutch passenger train derails
+					</div>
+					<div class="news-entry-summary">
+						A passenger train in the Netherlands has derailed after hitting a maintenance crane during rush hour, killing one person and injuring several others.
+					</div>
+				</div>		
+		</div>
+
+
 		<script src="web/js/jquery.js"></script>
 		<script src="web/js/bootstrap.js"></script>
-		<script src="web/js/dist/paho/paho-mqtt.js"></script>
-		<script src="https://unpkg.com/mqtt@2.18.8/dist/mqtt.min.js"></script>
-		<script src="web/js/widget/test_widget.js"></script>
+		<script src="web/js/widget/websocket_widget.js"></script>
+		<script src="web/js/widget/test_slide_widget.js"></script>
 
 	</body>
 

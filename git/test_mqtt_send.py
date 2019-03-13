@@ -65,7 +65,7 @@ mqttc.connect("localhost", 1883, 60)
 mqttc.loop_start()
 
 print("tuple")
-(rc, mid) = mqttc.publish("sensor/temperature", "Un message très important", qos=0)
+(rc, mid) = mqttc.publish("widget/temperature", "Un message très important", qos=0)
 print(rc)
 print(mid)
 print("class")
