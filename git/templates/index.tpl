@@ -9,6 +9,8 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href="web/css/bootstrap.min.css" rel="stylesheet">
+		<link href="web/css/weather-icons.css" rel="stylesheet">
+		<link href="web/css/weather-icons-wind.css" rel="stylesheet">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,31 +25,46 @@
 
 		<h1>Hello, world!</h1>
 
+		<div id="weather">
+			<div id="current_temp">
+				
+			</div>
+			<div id="forecast_temp">
+				
+			</div>
+			<div id="logo_weather">
+				<i class="wi wi-owm-904"></i>
+			</div>
+			<div id="string_weather">
+				
+			</div>
+		</div>
+
 		<div id="news-feed">
-				<div class="news-entry">
-					<div class="news-entry-title">
-						British nurse Pauline Cafferkey, who recovered from Ebola, back in hospital again
-					</div>
-					<div class="news-entry-summary">
-						A Scottish nurse, who recovered from Ebola but then suffered life-threatening complications from the virus persisting in her brain, has been admitted to hospital for a third time, a hospital in Scotland said on Tuesday.
-					</div>
+			<div class="news-entry">
+				<div class="news-entry-title">
+					British nurse Pauline Cafferkey, who recovered from Ebola, back in hospital again
 				</div>
-				<div class="news-entry" style="display:none">
-					<div class="news-entry-title">
-						Invercargill 11-year-old runaway heads towards Dunedin on his motorbike
-					</div>
-					<div class="news-entry-summary">
-						An 11-year-old Invercargill boy has been found after taking off from the city on his motorbike and heading towards Dunedin.
-					</div>
+				<div class="news-entry-summary">
+					A Scottish nurse, who recovered from Ebola but then suffered life-threatening complications from the virus persisting in her brain, has been admitted to hospital for a third time, a hospital in Scotland said on Tuesday.
 				</div>
-				<div class="news-entry" style="display:none">
-					<div class="news-entry-title">
-						One dead, several injured after Dutch passenger train derails
-					</div>
-					<div class="news-entry-summary">
-						A passenger train in the Netherlands has derailed after hitting a maintenance crane during rush hour, killing one person and injuring several others.
-					</div>
-				</div>		
+			</div>
+			<div class="news-entry" style="display:none">
+				<div class="news-entry-title">
+					Invercargill 11-year-old runaway heads towards Dunedin on his motorbike
+				</div>
+				<div class="news-entry-summary">
+					An 11-year-old Invercargill boy has been found after taking off from the city on his motorbike and heading towards Dunedin.
+				</div>
+			</div>
+			<div class="news-entry" style="display:none">
+				<div class="news-entry-title">
+					One dead, several injured after Dutch passenger train derails
+				</div>
+				<div class="news-entry-summary">
+					A passenger train in the Netherlands has derailed after hitting a maintenance crane during rush hour, killing one person and injuring several others.
+				</div>
+			</div>		
 		</div>
 
 

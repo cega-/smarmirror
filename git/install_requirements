@@ -24,6 +24,11 @@ pip3 install feedparser lxml caldav paho-mqtt bottle cheroot jinja2 setproctitle
 Download https://github.com/bottlepy/bottle/raw/master/bottle.py
 Replace bottle.py install with PIP by the download previously
 
+Download https://erikflowers.github.io/weather-icons/
+
+Logique de communication websocket en back :
+- Un service websocket tornado ouvre la fonctionnalité websocket et envois à tous les clients de la websocket ce qui lui est transmis (test_tornado_websocket_server.py)
+- Un service fait la passerelle entre websocket tornado et MQTT. Il récupère ce qui est publié dans le MQTT pour le transmettre à la websocket (test_websocket_server.py)
 
 @@@@@ Plus utile
 # Compilation de libwebsockets
