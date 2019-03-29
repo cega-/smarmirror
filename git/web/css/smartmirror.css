@@ -1,0 +1,58 @@
+
+body {
+	background-color: #101010;
+	color: white;
+}
+
+
+.clock {
+	font-family: 'Heebo', sans-serif;
+	font-size: 120px;
+	font-weight: bold;
+	text-align: right;
+}
+
+.current_date {
+	font-family: 'Heebo', sans-serif;
+	font-size: 80px;
+	font-weight: thin;
+	text-align: right;
+	line-height: 0.8;
+}
+
+.news-entry-title {
+	font-family: 'Heebo', sans-serif;
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.news-entry-summary {
+	font-family: 'Roboto', sans-serif;
+	font-size: 22px;
+	font-weight: medium;
+}
+
+.weather_temp {
+	font-family: 'Heebo', sans-serif;
+	font-size: 80px;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+.weather_forcast_temp {
+	font-family: 'Heebo', sans-serif;
+	font-size: 22px;
+	font-weight: medium;
+}
+
+.weather_logo {
+	font-size: 120px;
+	text-align: center;
+}
+
+.weather_string {
+	font-family: 'Heebo', sans-serif;
+	font-size: 22px;
+	font-weight: medium;
+	text-align: center;
+}

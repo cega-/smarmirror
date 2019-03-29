@@ -8,9 +8,11 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="https://fonts.googleapis.com/css?family=Heebo|Roboto" rel="stylesheet"> 
 		<link href="web/css/bootstrap.min.css" rel="stylesheet">
 		<link href="web/css/weather-icons.css" rel="stylesheet">
 		<link href="web/css/weather-icons-wind.css" rel="stylesheet">
+		<link href="web/css/smartmirror.css" rel="stylesheet">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -23,22 +25,65 @@
 
 	<body>
 
-		<h1>Hello, world!</h1>
+<div class="container">
+	<div class="row">
 
-		<div id="weather">
-			<div id="current_temp">
-				
+<!--		<div id="weather"> -->
+			<div class="col-4">
+				<div class="row">
+					<div class="col-lg">
+						<div id="logo_weather" class="weather_logo">
+							<i class="wi wi-owm-904"></i>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg">
+						<div id="string_weather" class="weather_string">
+							Ciel Dégagé
+						</div>
+					</div>
+				</div>
 			</div>
-			<div id="forecast_temp">
-				
+
+			<div class="col-4">
+				<div class="row">
+					<div class="col-lg">
+						<div id="current_temp" class="weather_temp">
+							15°C
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg">
+						<div id="forecast_temp" class="weather_forcast_temp">
+							9°C min / 16°C max
+						</div>
+					</div>
+				</div>
 			</div>
-			<div id="logo_weather">
-				<i class="wi wi-owm-904"></i>
+		<!-- </div> -->
+
+		<div class="col-4">
+			<div class="row">
+				<div class="col-lg">
+					<div id="digital_clock" class="clock">
+						Super
+					</div>
+				</div>
 			</div>
-			<div id="string_weather">
-				
+			<div class="row">
+				<div class="col-lg">
+					<div id="current_date" class="current_date">
+						Date
+					</div>
+				</div>
 			</div>
 		</div>
+
+	</div>
+</div>
+
 
 		<div id="news-feed">
 			<div class="news-entry">
@@ -70,6 +115,8 @@
 
 		<script src="web/js/jquery.js"></script>
 		<script src="web/js/bootstrap.js"></script>
+		<script src="web/js/widget/digital_clock_widget.js"></script>
+		<script src="web/js/widget/date_widget.js"></script>
 		<script src="web/js/widget/websocket_widget.js"></script>
 		<script src="web/js/widget/test_slide_widget.js"></script>
 
