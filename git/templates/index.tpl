@@ -25,46 +25,68 @@
 
 	<body>
 
-<div class="container">
+<div class="container-fluid">
 	<div class="row">
 
-<!--		<div id="weather"> -->
+			<div class="col-3">
+
+				coucou
+				
+			</div>
+
+			<div class="col-9">
+				<div class="to_left">test</div>
+			</div>
+	</div>
+</div>
+
+
+<div class="container" style="margin-right: 0px;">
+	<div class="row">
+
+			<div class="offset-3">
+
+				
+				
+			</div>
+
 			<div class="col-4">
+				
 				<div class="row">
-					<div class="col-lg">
-						<div id="logo_weather" class="weather_logo">
+
+					<div class="col-6 col-lg">
+						<div id="weather_temp" class="weather_temp">
+							15°C
+						</div>
+					</div>
+
+					<div class="col-6 col-lg">
+						<div id="weather_logo" class="weather_logo">
 							<i class="wi wi-owm-904"></i>
 						</div>
 					</div>
+
 				</div>
+
 				<div class="row">
 					<div class="col-lg">
-						<div id="string_weather" class="weather_string">
+						<div id="weather_string" class="weather_string">
 							Ciel Dégagé
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="col-4">
 				<div class="row">
 					<div class="col-lg">
-						<div id="current_temp" class="weather_temp">
-							15°C
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-lg">
-						<div id="forecast_temp" class="weather_forcast_temp">
+						<div id="weather_forcast_temp" class="weather_forcast_temp">
 							9°C min / 16°C max
 						</div>
 					</div>
 				</div>
-			</div>
-		<!-- </div> -->
 
-		<div class="col-4">
+			</div>
+
+		<div class="col-5">
 			<div class="row">
 				<div class="col-lg">
 					<div id="digital_clock" class="clock">
@@ -82,10 +104,97 @@
 		</div>
 
 	</div>
+
+	<div class="row">
+
+			<div class="offset-3">
+
+				
+				
+			</div>
+
+
+			<div class="col-9">
+				<hr class="sep">
+				<div class="title">Agenda</div>
+				
+				
+			</div>
+
+	</div>
+
+	<div class="row">
+
+			<div class="offset-3">
+
+				
+				
+			</div>
+
+
+			<div class="col-9">
+				<hr class="sep">
+				<div class="title">Rappel</div>
+				
+				
+			</div>
+
+	</div>
+
+
+
 </div>
 
 
-		<div id="news-feed">
+	<div class="container-fluid news-feed">
+		<hr class="sep">
+		<div class="row">
+
+				<div class="col-1" style="padding-right: 3px;">
+					<div class="row invert">
+						<div class="title">
+						NEWS
+						</div>
+					</div>
+					<div class="row">
+					</div>
+				</div>
+
+				<div class="col-11">
+					<!-- <div id="news-feed" class="news-feed"> -->
+					<div id="news-feed">
+						<div class="news-entry">
+							<div class="news-entry-title">
+								British nurse Pauline Cafferkey, who recovered from Ebola, back in hospital again
+							</div>
+							<div class="news-entry-summary">
+								A Scottish nurse, who recovered from Ebola but then suffered life-threatening complications from the virus persisting in her brain, has been admitted to hospital for a third time, a hospital in Scotland said on Tuesday.
+							</div>
+						</div>
+						<div class="news-entry" style="display:none">
+							<div class="news-entry-title">
+								Invercargill 11-year-old runaway heads towards Dunedin on his motorbike
+							</div>
+							<div class="news-entry-summary">
+								An 11-year-old Invercargill boy has been found after taking off from the city on his motorbike and heading towards Dunedin.
+							</div>
+						</div>
+						<div class="news-entry" style="display:none">
+							<div class="news-entry-title">
+								One dead, several injured after Dutch passenger train derails
+							</div>
+							<div class="news-entry-summary">
+								A passenger train in the Netherlands has derailed after hitting a maintenance crane during rush hour, killing one person and injuring several others.
+							</div>
+						</div>		
+					</div>
+				</div>
+		</div>
+	</div>
+
+
+<!-- <div class="title">NEWS</div> 
+		<div id="news-feed" class="news-feed">
 			<div class="news-entry">
 				<div class="news-entry-title">
 					British nurse Pauline Cafferkey, who recovered from Ebola, back in hospital again
@@ -111,6 +220,7 @@
 				</div>
 			</div>		
 		</div>
+-->
 
 
 		<script src="web/js/jquery.js"></script>

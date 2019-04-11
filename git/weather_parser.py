@@ -1,6 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
+import json
 import paho.mqtt.client as mqtt
 import requests
 
@@ -19,6 +20,7 @@ mqttc = mqtt.Client()
 mqttc.connect("localhost", 1883, 60)
 mqttc.loop_start()
 string_weather = ''
+d_weather_widget = {}
 
 while True:
 	resp = requests.get(url=url, params=params)
@@ -37,7 +39,12 @@ while True:
 				{4}
 			</div>""".format(int(d_weather['main']['temp']), int(d_weather['main']['temp_min']), int(d_weather['main']['temp_max']), 'wi-owm-{0}'.format(d_weather['weather'][0]['id']), d_weather['weather'][0]['description'].capitalize())
 
-	infot = mqttc.publish("widget/weather", string_weather, qos=0)
+	d_weather_widget['weather_logo'] = '<i class="wi wi-owm-{0}"></i>'.format(d_weather['weather'][0]['id'])
+	d_weather_widget['weather_string'] = d_weather['weather'][0]['description'].capitalize()
+	d_weather_widget['weather_temp'] = '{0}°C'.format(int(d_weather['main']['temp']))
+	d_weather_widget['weather_forcast_temp'] = '{0}°C min / {1}°C max'.format(int(d_weather['main']['temp_min']), int(d_weather['main']['temp_max']))
+
+	infot = mqttc.publish("widget/weather", json.dumps(d_weather_widget), qos=0)
 	infot.wait_for_publish()
 	
 	

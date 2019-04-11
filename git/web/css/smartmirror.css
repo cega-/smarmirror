@@ -1,7 +1,15 @@
 
+html {
+  height: 100%;
+}
+
 body {
+	position: relative;
 	background-color: #101010;
 	color: white;
+	min-height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -36,13 +44,14 @@ body {
 	font-family: 'Heebo', sans-serif;
 	font-size: 80px;
 	font-weight: bold;
-	margin-top: 20px;
+	margin-top: 35px;
 }
 
 .weather_forcast_temp {
 	font-family: 'Heebo', sans-serif;
 	font-size: 22px;
 	font-weight: medium;
+	text-align: right;
 }
 
 .weather_logo {
@@ -52,7 +61,46 @@ body {
 
 .weather_string {
 	font-family: 'Heebo', sans-serif;
-	font-size: 22px;
+	font-size: 42px;
 	font-weight: medium;
+	text-align: right;
+}
+
+.weather {
+	vertical-align: middle;
 	text-align: center;
+}
+
+hr.sep {
+  border: 2px solid;
+  border-radius: 5px;
+  margin-bottom: 0px;
+}
+
+.title {
+	font-family: 'Heebo', sans-serif;
+	font-size: 42px;
+	font-weight: bold;
+	text-align: left;
+	margin-top: 0px;
+	line-height: 50px;
+}
+
+.invert {
+	float: right;
+	text-align: right;
+	background-color: white;
+	color: #101010;
+	margin: 0px;
+}
+
+.news-feed {
+	height: 160px;
+	position: absolute; bottom: 0;
+}
+
+.to_left {
+	position: relative;
+	float: right;
+	text-align: right;
 }

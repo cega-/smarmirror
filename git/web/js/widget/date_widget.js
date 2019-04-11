@@ -11,7 +11,7 @@ $(function() {
 
 		var today = new Date();
 		var weekday = capitalizeFirstLetter(new Intl.DateTimeFormat('fr-FR', {weekday: 'long'}).format(today));
-		var day = new Intl.DateTimeFormat('fr-FR', {day: 'numeric'}).format(today);
+		var day = new Intl.DateTimeFormat('fr-FR', {day: '2-digit'}).format(today);
 		var month = capitalizeFirstLetter(new Intl.DateTimeFormat('fr-FR', {month: 'long'}).format(today));
 
 		var date_string_iso = weekday +"<br>"+ day +' '+ month;

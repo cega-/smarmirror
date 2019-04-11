@@ -15,7 +15,12 @@ $(function() {
 				widget_content = JSON.parse(event.data);
 				//console.log(JSON.parse(event.data));
 				div_widget_name = widget_content['topic'].split('/')[1];
-				$('#'+div_widget_name).html(widget_content['content']);
+				console.log(JSON.parse(widget_content['content']));
+				var d_content = JSON.parse(widget_content['content']);
+				Object.entries(d_content).forEach(entry => {
+					$('#'+entry[0]).html(entry[1]);
+				});
+				//$('#'+div_widget_name).html(widget_content['content']);
 			};
 
 			ws.onclose = function(error){
