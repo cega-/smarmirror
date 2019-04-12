@@ -12,6 +12,7 @@
 		<link href="web/css/bootstrap.min.css" rel="stylesheet">
 		<link href="web/css/weather-icons.css" rel="stylesheet">
 		<link href="web/css/weather-icons-wind.css" rel="stylesheet">
+		<link href="web/css/icon_font.css" rel="stylesheet">
 		<link href="web/css/smartmirror.css" rel="stylesheet">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -24,22 +25,6 @@
 	</head>
 
 	<body>
-
-<div class="container-fluid">
-	<div class="row">
-
-			<div class="col-3">
-
-				coucou
-				
-			</div>
-
-			<div class="col-9">
-				<div class="to_left">test</div>
-			</div>
-	</div>
-</div>
-
 
 <div class="container" style="margin-right: 0px;">
 	<div class="row">
@@ -117,6 +102,32 @@
 			<div class="col-9">
 				<hr class="sep">
 				<div class="title">Agenda</div>
+				<div class="row main-text">
+					<div class="col-3 smooth-text">
+						<span class="icon-today"></span> 24/04
+					</div>
+					<div class="col-9">
+						 Rendez-vous dentiste
+					</div>
+				</div>
+
+				<div class="row main-text">
+					<div class="col-3 smooth-text">
+						<span class="icon-clock"></span> 9h - 10h
+					</div>
+					<div class="col-9">
+						 Rendez-vous dentiste
+					</div>
+				</div>
+
+				<div class="row main-text">
+					<div class="col-3 smooth-text">
+						<span class="icon-clock"></span> 9h - 10h
+					</div>
+					<div class="col-9">
+						 Rendez-vous dentiste Rendez-vous dentiste Rendez-vous dentisteRendez-vous dentiste Rendez-vous dentiste Rendez-vous dentiste
+					</div>
+				</div>
 				
 				
 			</div>
@@ -136,6 +147,14 @@
 				<hr class="sep">
 				<div class="title">Rappel</div>
 				
+				<div class="row main-text">
+					<div class="col-3 smooth-text">
+						<span class="icon-notification"></span> 13h45
+					</div>
+					<div class="col-9">
+						 Rendez-vous dentiste Rendez-vous dentiste Rendez-vous dentisteRendez-vous dentiste Rendez-vous dentiste Rendez-vous dentiste
+					</div>
+				</div>
 				
 			</div>
 
@@ -147,20 +166,28 @@
 
 
 	<div class="container-fluid news-feed">
-		<hr class="sep">
 		<div class="row">
-
-				<div class="col-1" style="padding-right: 3px;">
-					<div class="row invert">
-						<div class="title">
+			<div class="col-1">
+				Logo info trafic
+			</div>
+			<div class="col-11">
+				La ligne ne s'affiche que dans le cas ou des incidents sont présent sur les lignes surveillées
+			</div>
+		</div>
+		<div class="row">
+				<div class="col-1">
+					<div class="row">
+						<div class="title invert">
 						NEWS
+						</div>
+						<div class="triangle-topleft">
 						</div>
 					</div>
 					<div class="row">
 					</div>
 				</div>
 
-				<div class="col-11">
+				<div class="col-10" style="padding-left: 0px;">
 					<!-- <div id="news-feed" class="news-feed"> -->
 					<div id="news-feed">
 						<div class="news-entry">
