@@ -119,3 +119,11 @@ hr.sep {
 .smooth-text {
 	color: lightslategrey;
 }
+
+.picto > img {
+	display: block;
+	object-fit: contain;
+	max-width: 100%;
+	height: 100%;
+	vertical-align: bottom;
+}

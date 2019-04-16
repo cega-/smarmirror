@@ -171,7 +171,16 @@
 				Logo info trafic
 			</div>
 			<div class="col-11">
-				La ligne ne s'affiche que dans le cas ou des incidents sont présent sur les lignes surveillées
+				<div id="transport">
+					<div class="transport-entry">
+						<div class="transport-entry-title">
+							British nurse Pauline Cafferkey, who recovered from Ebola, back in hospital again
+						</div>
+						<div class="transport-entry-summary">
+							A Scottish nurse, who recovered from Ebola but then suffered life-threatening complications from the virus persisting in her brain, has been admitted to hospital for a third time, a hospital in Scotland said on Tuesday.
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row">

@@ -19,6 +19,7 @@ $(function() {
 				var d_content = JSON.parse(widget_content['content']);
 				Object.entries(d_content).forEach(entry => {
 					$('#'+entry[0]).html(entry[1]);
+					console.log(entry[1]);
 				});
 				//$('#'+div_widget_name).html(widget_content['content']);
 			};
