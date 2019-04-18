@@ -166,9 +166,9 @@
 
 
 	<div class="container-fluid news-feed">
-		<div class="row">
+		<div class="row transport-block">
 			<div class="col-1">
-				Logo info trafic
+				<img width="120" src="/web/img/transport_logo/metro_rer_white_logo.png">
 			</div>
 			<div class="col-11">
 				<div id="transport">
@@ -183,7 +183,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row">
+		<div class="row news-block">
 				<div class="col-1">
 					<div class="row">
 						<div class="title invert">

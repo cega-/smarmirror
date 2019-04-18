@@ -67,7 +67,7 @@ while True:
 #					d_transport_event['transport_event_text'] = html_clear_text(event_text)
 
 #					l_transport_widget.append(d_transport_event.copy())
-					l_string_transport_event += '<div class=\"transport-entry\" style=\"display:none\"> <div class=\"transport-entry-title\"><span class=\"picto\"><img src=\"/web/img/{0}.svg\"></span> {1}</div><div class=\"transport-entry-summary\">{2}</div></div>'.format(line, html_clear_text(line_dest), html_clear_text(event_text))
+					l_string_transport_event += '<div class=\"transport-entry\" style=\"display:none\"> <div class=\"transport-entry-title\"><span class=\"picto\"><img src=\"/web/img/transport_logo/{0}.svg\"></span> {1}</div><div class=\"transport-entry-summary\">{2}</div></div>'.format(line, html_clear_text(line_dest), html_clear_text(event_text))
 
 	d_transport_event['transport'] = l_string_transport_event
 

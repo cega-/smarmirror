@@ -95,7 +95,7 @@ hr.sep {
 }
 
 .news-feed {
-	height: 150px;
+	height: 250px;
 	position: absolute; bottom: 0;
 }
 
@@ -121,9 +121,18 @@ hr.sep {
 }
 
 .picto > img {
-	display: block;
-	object-fit: contain;
-	max-width: 100%;
-	height: 100%;
-	vertical-align: bottom;
+	height: 1em;
+	width: auto;
+}
+
+.transport-block {
+	display: none;
+}
+
+.transport-entry-title {
+	font-size: 32px;
+}
+
+.transport-entry-summary {
+	font-size: 22px;
 }

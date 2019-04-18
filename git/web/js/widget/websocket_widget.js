@@ -22,6 +22,7 @@ $(function() {
 					console.log(entry[1]);
 				});
 				//$('#'+div_widget_name).html(widget_content['content']);
+				$('.'+div_widget_name+'-block').show();
 			};
 
 			ws.onclose = function(error){
