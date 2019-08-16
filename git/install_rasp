@@ -22,6 +22,11 @@ to switch on
 xset -display :0.0 dpms 0 0 10
 by pass "standby" and "suspend" mod and directly attach 10sec timeout to the off mod
 
+Rotate screen to get portrait display orientation
+sudo nano /boot/config.txt
+and add at end
+display_rotate=3
+
 pip3 install adafruit-blinka
 pip3 install RPI.GPIO
 pip3 install --upgrade setuptools
