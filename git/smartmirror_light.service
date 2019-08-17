@@ -4,7 +4,7 @@ After=network.target
  
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /opt/smartmirror/light_touch.py
+ExecStart=/usr/bin/python3 /opt/smartmirror/light_button.py
 Restart=on-failure
 SuccessExitStatus=3 4
 RestartForceExitStatus=3 4
