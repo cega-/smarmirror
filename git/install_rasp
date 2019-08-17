@@ -27,6 +27,16 @@ sudo nano /boot/config.txt
 and add at end
 display_rotate=3
 
+To avoid black stripe
+sudo nano /boot/config.txt
+Uncomment "disable_overscan=1"
+
+Create service to manage light
+sudo cp smartmirror_light.service /etc/systemd/system/smartmirror_light.service
+sudo chmod 644 /etc/systemd/system/smartmirror_light.service
+sudo systemctl start smartmirror_light
+sudo systemctl enable smartmirror_light
+
 pip3 install adafruit-blinka
 pip3 install RPI.GPIO
 pip3 install --upgrade setuptools
