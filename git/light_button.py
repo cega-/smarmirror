@@ -28,9 +28,9 @@ pin_main_light = 22
 pin_snake_light = 27
 #temps = 1                              #valeur attente en msec
 #temps = 10
+temps = 50
 #temps = 100
-#temps = 100
-temps = 1000
+#temps = 1000
 bounce = 500
 l_pushed = []
 
@@ -73,18 +73,36 @@ if __name__ == '__main__':
      """
      Programme par défaut
      """
+     gpioRead2 = {}
+     control_flag_timelaps = True
      print("Début du programme")        #IHM
      print("Sortie par ctrl-c\n")       #IHM
      try:
-      GPIO.add_event_detect(button_main_light, GPIO.BOTH, callback=switch_main_light, bouncetime=bounce)
-      GPIO.add_event_detect(button_snake_light, GPIO.BOTH, callback=switch_snake_light, bouncetime=bounce)
-      GPIO.add_event_detect(pin, GPIO.BOTH, callback=my_callback, bouncetime=bounce)
+#      GPIO.add_event_detect(button_main_light, GPIO.BOTH, callback=switch_main_light, bouncetime=bounce)
+#      GPIO.add_event_detect(button_snake_light, GPIO.BOTH, callback=switch_snake_light, bouncetime=bounce)
+#      GPIO.add_event_detect(pin, GPIO.BOTH, callback=my_callback, bouncetime=bounce)
       while True:                    #boucle infinie
-       #    for pin in l_pin:
-        #     entree = GPIO.input(pin)   #lecture entrée
-         #    if (entree == True):       #si touche appuyée
-          #       print("BP appuyé {0}".format(pin))     #IHM
-             time.sleep(temps / 1000)   #attente en msec 
+           for pin in l_pin:
+             entree = GPIO.input(pin)   #lecture entrée
+             #print("{0}, {1}".format(pin, entree))
+             if (entree == True):
+              if (pin in gpioRead2.keys()):
+               if (gpioRead2[pin]['state'] == True):
+                print('reset')
+                gpioRead2[pin]['state'] = False
+               if (time.time()*1000 - gpioRead2[pin]['time'] > 500):
+                control_flag_timelaps = True
+               else:
+                control_flag_timelaps = False
+              else:
+               control_flag_timelaps = True
+
+              if (control_flag_timelaps):
+               time.sleep( 100 / 1000 )
+               gpioRead2[pin] = {'state': GPIO.input( pin ), 'time': time.time()*1000}
+              if (entree == gpioRead2[pin]['state']):       #si touche appuyée
+                  print("BP appuyé {0}, Time {1}, Timelaps {2}".format(pin, gpioRead2[pin]['time'], time.time()*1000 - gpioRead2[pin]['time']))     #IHM
+             #time.sleep(temps / 1000)   #attente en msec 
      except KeyboardInterrupt:          #sortie boucle par ctrl-c
 #         GPIO.output(pin_main_light, GPIO.HIGH)
          GPIO.cleanup()                 #libère toutes les ressources
