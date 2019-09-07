@@ -21,11 +21,11 @@ import RPi.GPIO as GPIO                 #bibliothèque RPi.GPIO
 import time                             #bibliothèque time
 #-------------------------------------------------------------------------------
 button_main_light = 17
-button_snake_light = 23
-button_screen_light = 24
+button_snake_light = 24
+button_screen_light = 23
 l_pin = [button_main_light,button_snake_light,button_screen_light]                                #broche utilisé en entrée
-pin_main_light = 22
-pin_snake_light = 27
+pin_main_light = 27
+pin_snake_light = 22
 #temps = 1                              #valeur attente en msec
 #temps = 10
 temps = 50
@@ -34,32 +34,42 @@ temps = 50
 bounce = 500
 l_pushed = []
 
-def switch_main_light(channel):
- print("push {0}".format(channel))
- if channel not in l_pushed:
-  l_pushed.append(channel)
-  print(l_pushed)
+def switch_main_light():
+ if not gpioRead2[pin]['switch']:
+  gpioRead2[pin]['switch'] = True
   GPIO.setmode(GPIO.BCM)
   GPIO.setup(pin_main_light, GPIO.OUT)
   GPIO.output(pin_main_light, GPIO.LOW)
+  print('Switch ON Main')
  else :
-  l_pushed.remove(channel)
+  gpioRead2[pin]['switch'] = False
   GPIO.output(pin_main_light, GPIO.HIGH)
 
-def switch_snake_light(channel):
- print("push {0}".format(channel))
- if channel not in l_pushed:
-  l_pushed.append(channel)
-  print(l_pushed)
+def switch_snake_light():
+ if not gpioRead2[pin]['switch']:
+  gpioRead2[pin]['switch'] = True
   GPIO.setmode(GPIO.BCM)
   GPIO.setup(pin_snake_light, GPIO.OUT)
   GPIO.output(pin_snake_light, GPIO.LOW)
+  print('Switch ON Snake')
  else :
-  l_pushed.remove(channel)
+  gpioRead2[pin]['switch'] = False
   GPIO.output(pin_snake_light, GPIO.HIGH)
 
-def my_callback(channel):
- print("push {0}".format(channel))
+#def switch_snake_light(channel):
+# print("push {0}".format(channel))
+# if channel not in l_pushed:
+#  l_pushed.append(channel)
+#  print(l_pushed)
+#  GPIO.setmode(GPIO.BCM)
+#  GPIO.setup(pin_snake_light, GPIO.OUT)
+#  GPIO.output(pin_snake_light, GPIO.LOW)
+# else :
+#  l_pushed.remove(channel)
+#  GPIO.output(pin_snake_light, GPIO.HIGH)
+
+def switch_screen_light():
+ print("push {0}".format('switch_screen_light'))
 
 GPIO.setwarnings(False)                 #désactive le mode warning
 GPIO.setmode(GPIO.BCM)                  #utilisation des numéros de ports du
@@ -73,7 +83,8 @@ if __name__ == '__main__':
      """
      Programme par défaut
      """
-     gpioRead2 = {}
+     init_time = time.time()*1000
+     gpioRead2 = {button_main_light: {'state': None, 'time': init_time, 'func': switch_main_light, 'switch': False}, button_snake_light: {'state': None, 'time': init_time, 'func': switch_snake_light, 'switch': False}, button_screen_light: {'state': None, 'time': init_time, 'func': switch_screen_light, 'switch': False}}
      control_flag_timelaps = True
      print("Début du programme")        #IHM
      print("Sortie par ctrl-c\n")       #IHM
@@ -99,10 +110,12 @@ if __name__ == '__main__':
 
               if (control_flag_timelaps):
                time.sleep( 100 / 1000 )
-               gpioRead2[pin] = {'state': GPIO.input( pin ), 'time': time.time()*1000}
+               gpioRead2[pin]['state'] = GPIO.input( pin )
+               gpioRead2[pin]['time'] = time.time()*1000
               if (entree == gpioRead2[pin]['state']):       #si touche appuyée
                   print("BP appuyé {0}, Time {1}, Timelaps {2}".format(pin, gpioRead2[pin]['time'], time.time()*1000 - gpioRead2[pin]['time']))     #IHM
-             #time.sleep(temps / 1000)   #attente en msec 
+                  gpioRead2[pin]['func']()
+              #time.sleep(temps / 1000)   #attente en msec 
      except KeyboardInterrupt:          #sortie boucle par ctrl-c
 #         GPIO.output(pin_main_light, GPIO.HIGH)
          GPIO.cleanup()                 #libère toutes les ressources
